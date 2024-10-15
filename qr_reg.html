@@ -46,15 +46,19 @@ ref={video}></video>
         const ctx = canvas.getContext('2d');
         
         // Access the camera
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
-            .then(stream => {
-                video.srcObject = stream;
-                video.play();
-                scanQRCode();
-            })
-            .catch(err => {
-                alert('Error accessing camera: ' + err);
-            });
+        navigator.mediaDevices.getUserMedia({
+            video: {
+                facingMode: { exact: "environment" },
+            },
+        })
+        .then(stream => {
+            video.srcObject = stream;
+            video.play();
+            scanQRCode();
+        })
+        .catch(err => {
+            alert('Error accessing camera: ' + err);
+        });
 
         // Scan for QR codes
         function scanQRCode() {
