@@ -24,7 +24,10 @@
     <h1>QR Code Scanner and Generator</h1>
 
     <!-- Video element to display camera stream -->
-    <video id="video" autoplay></video>
+    <video id="video" autoPlay={true}
+playsInline={true}
+muted={true}
+ref={video}></video>
     
     <!-- Canvas for QR scanning -->
     <canvas id="qr-canvas"></canvas>
