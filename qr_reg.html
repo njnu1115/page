@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>jsQR Demo</title>
+    <title>QRCode Regenerator</title>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
   </head>
@@ -15,15 +15,6 @@
       var canvas = canvasElement.getContext("2d");
       var outputMessage = document.getElementById("outputMessage");
 
-      function drawLine(begin, end, color) {
-        canvas.beginPath();
-        canvas.moveTo(begin.x, begin.y);
-        canvas.lineTo(end.x, end.y);
-        canvas.lineWidth = 4;
-        canvas.strokeStyle = color;
-        canvas.stroke();
-      }
-      // Use facingMode: environment to attemt to get the front camera on phones
       navigator.mediaDevices.getUserMedia({
         video: {
           facingMode: "environment"
